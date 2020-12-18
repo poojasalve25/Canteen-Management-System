@@ -1,0 +1,49 @@
+<% var total = 0 ;%>
+ <% if(userData.length > 0) { %>
+    <form action="/cart/update" method="post" >
+        <h1> CART</h1>
+        <table class="cart-table table table-bordered table-striped">
+            <tbody>
+                <% userData.forEach(function(data) { %>
+                <tr>
+                    <td>
+                        <a href="/user/cart/remove/<%= data.pid%>">
+                            <i class="fa fa-remove text-danger"></i>
+                        </a>
+                    </td>
+                    <td class="product-thumb">
+                        <img src="<%=data.image%> " class="img-thumbnail img-responsive" style="height: 100px; width: 144px;">
+                    </td>
+                    <td style="font-size: 16px; color: black;"><%= data.pname %></td>
+                    <td style="font-size: 16px; color: black;">
+                        <%= data.mrp %>
+                    </td>
+                    <!--<td>
+                        <input type="text" class="qty" name="qty[]" value=1>
+                        <input type="hidden" name="product_id[]" value="<%= data.pid%>">
+                        
+                    </td>-->
+                </tr>
+                <% total = (total + data.mrp)%>
+                <% }); %>
+                <tr class="info" style="font-size: 16px; color: black;">
+                    <td colspan="5" class="text-right" style="color: black; font-size: 16px;">
+                        Total:
+                        <%= total %>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="clearfix cart-footer">
+            
+            
+            <button><a href="/user/cart/empty" style = "color: black;" class="btn btn-default pull-left"><i class="fa fa-remove"></i> Empty cart</a><button>
+            <button ><a href="/user/cart/checkout" style = "color: black;" class="btn btn-default pull-right">Checkout <i class="fa fa-angle-right"></i></a></button>
+        </div>
+    </form>
+    <% } else { %>
+    <p class="alert alert-info">Sorry, no products in your cart.</p>
+    <a href="/user/menu">Back to Menu</a>
+    <% } %>
+    
+

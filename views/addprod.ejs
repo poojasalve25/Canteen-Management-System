@@ -1,0 +1,139 @@
+<div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item nav-profile">
+            <a href="#" class="nav-link">
+              <div class="nav-profile-image">
+                <img src="/img/admin.svg" alt="profile">
+                <span class="login-status online"></span>
+                <!--change to offline or busy as needed-->
+              </div>
+              <div class="nav-profile-text d-flex flex-column">
+                <span class="font-weight-bold mb-2">ADMIN</span>
+                <span class="text-secondary text-small">CANTEEN MANAGER</span>
+              </div>
+              <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/admin_dashboard">
+              <span class="menu-title" style="font-size: 16px;">Dashboard</span>
+              <i class="mdi mdi-home menu-icon"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/userlist">
+              <span class="menu-title" style="font-size: 16px;">All Users</span>
+              <i class="mdi mdi-home menu-icon"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/productlist">
+              <span class="menu-title" style="font-size: 16px;">All Products</span>
+              <i class="mdi mdi-home menu-icon"></i>
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/addprod">
+              <span class="menu-title" style="font-size: 16px;">Add Product</span>
+              <i class="mdi mdi-home menu-icon"></i>
+            </a>
+          </li>  
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/login">
+              <span class="menu-title" style="font-size: 16px;">Logout</span>
+              <i class="mdi mdi-home menu-icon"></i>
+            </a>
+          </li>         
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row" id="proBanner">
+          </div>
+          <div class="page-header">
+            <h3 class="page-title">
+              <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                <i class="mdi mdi-home"></i>
+              </span> Dashboard
+            </h3>
+  
+            
+            
+            <nav aria-label="breadcrumb">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item active" aria-current="page">
+                  <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <br>
+        
+
+ 
+
+          <div class="wrap-contact100">
+			<form class="contact100-form validate-form" action="/admin/addprod" method="POST">
+				<span class="contact100-form-title">
+					ADD PRODUCT 
+				</span>
+
+				<div class="wrap-input100 rs1-wrap-input100 validate-input" >
+					<span class="label-input100">Product Name*</span>
+					<input class="input100" type="text" name="pname" placeholder="Enter product name">
+				</div>
+
+				<div class="wrap-input100 rs1-wrap-input100 validate-input" >
+					<span class="label-input100">Category *</span>
+					<input class="input100" type="text" name="cat" placeholder="Enter product category">
+				</div>
+
+				<div class="wrap-input100">
+					<span class="label-input100">MRP</span>
+					<input class="input100" type="number" name="mrp" placeholder="Mrp">
+				</div>
+
+				<div class="wrap-input100 validate-input" >
+					<span class="label-input100">Stock</span>
+					<input class="input100" name="stock" type="number" placeholder="stock"></input>
+				</div>
+
+				<div class="wrap-input100 validate-input" >
+					<span class="label-input100">Image</span>
+					<input class="input100" name="image" type="text" placeholder="Image"></input>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn" type="Submit">
+							Submit
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+
+
+
+
+        
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->

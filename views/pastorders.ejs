@@ -1,0 +1,108 @@
+<div class="wrap">
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <button id="primary-nav-button" type="button">Menu</button>
+                    <a href=""><div class="logo">
+                        <img src="/img/PICT_logo.png" alt="Venue Logo" style="height: 95px; width: 155px;">
+                    </div></a>
+                    <nav id="primary-nav" class="dropdown cf">
+                        <ul class="dropdown menu">
+                            <li><a href="/user/pastorders">Past Orders</a></li>
+                            <li><a href="/user/menu">Menu</a></li>
+                            <li><a class="nav-link" href="/user/cart">Cart</a></li>
+                            <li><a class="nav-link" href="/user/login">Logout</a></li>
+                        </ul>
+                    </nav><!-- / #primary-nav -->
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+  
+
+
+<h2>PRODUCTS LIST</h2>
+<br>
+
+<div class="wrap-table100">
+    <div class="table100">
+        <table>
+            <thead>
+                <tr class="table100-head">
+                    
+                    <th class="column2">OID</th>
+                    <th class="column3">Date</th>
+                    <th class="column2">Bill</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if(userData.length!=0){ %>
+                <% var i=1; %>
+                <% userData.forEach(function(data){ %>                        
+                    <tr>
+                        <td class="column2"><%= data.o_id %></td>
+                        <td class="column3"><%= data.Date %></td>
+                        <td class="column2"><%= data.bill %></td>
+                    </tr>
+                    
+                    <%  i++; }) %>
+                    <% } else{ %>
+                        <tr>
+                            <td colspan="7">No Data Found</td>
+                        </tr>
+                    <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+<footer>
+    <div class="container"  style="width: 1600px">
+        <div>
+            <div class="col-md-5">
+                <div class="about-veno">
+                    <div class="logo">
+                        <img src="/img/PICT_logo.png"  style="height: 95px; width: 155px;" alt="Venue Logo">
+                    </div>
+                    <h2 style="align-items: center;">PICT Canteen</h2>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="useful-links">
+                    <div class="footer-heading">
+                        <h4>Useful Links</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul>
+                                <li><a href="/user/menu"><i class="fa fa-stop"></i>MENU</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="contact-info">
+                    <div class="footer-heading">
+                        <h4>Contact Information</h4>
+                    </div>
+                    <p><i class="fa fa-map-marker"></i> PICT College , Katraj, 411043</p>
+                    <ul>
+                        <li><span>Phone:</span><a href="#">8888888888</a></li>
+                        <li><span>Email:</span><a href="#">admin@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="sub-footer">
+    <p>Copyright © 2020 Pict Canteen</p>
+</div>
+
