@@ -1,0 +1,136 @@
+<div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item nav-profile">
+            <a href="#" class="nav-link">
+              <div class="nav-profile-image">
+                <img src="/img/admin.svg" alt="profile">
+                <span class="login-status online"></span>
+                <!--change to offline or busy as needed-->
+              </div>
+              <div class="nav-profile-text d-flex flex-column">
+                <span class="font-weight-bold mb-2">ADMIN</span>
+                <span class="text-secondary text-small">CANTEEN MANAGER</span>
+              </div>
+              <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/admin_dashboard">
+              <span class="menu-title" style="font-size: 16px;">Dashboard</span>
+              <i class="mdi mdi-home menu-icon"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/userlist">
+              <span class="menu-title" style="font-size: 16px;">All Users</span>
+              <i class="mdi mdi-home menu-icon"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/productlist">
+              <span class="menu-title" style="font-size: 16px;">All Products</span>
+              <i class="mdi mdi-home menu-icon"></i>
+            </a>
+          </li> 
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/addprod">
+              <span class="menu-title" style="font-size: 16px;">Add Product</span>
+              <i class="mdi mdi-home menu-icon"></i>
+            </a>
+          </li>     
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/login">
+              <span class="menu-title" style="font-size: 16px;">Logout</span>
+              <i class="mdi mdi-home menu-icon"></i>
+            </a>
+          </li>      
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row" id="proBanner">
+          </div>
+          <div class="page-header">
+            <h3 class="page-title">
+              <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                <i class="mdi mdi-home"></i>
+              </span> Dashboard
+            </h3>
+  
+            
+            
+            <nav aria-label="breadcrumb">
+              <ul class="breadcrumb">
+                <li class="breadcrumb-item active" aria-current="page">
+                  <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <h2>PRODUCTS LIST</h2>
+          <br>
+        
+
+        <div class="wrap-table100">
+            <div class="table100">
+                <table>
+                    <thead>
+                        <tr class="table100-head">
+                            <th class="column1">PID</th>
+                            <th class="column2">Cat</th>
+                            <th class="column3">Name</th>
+                            <th class="column2">Image</th> 
+                            <th class="column2">Mrp, Stock, Delete Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if(userData.length!=0){ %>
+                        <% var i=1; %>
+                        <% userData.forEach(function(data){ %>                        
+                            <tr>
+                                <td class="column1"><%= data.pid %></td>
+                                <td class="column2"><%= data.cat %></td>
+                                <td class="column3" style="align-items:left ;"><%= data.pname %></td>
+                                <td class="column5"><img src="<%=data.image%>" alt=""></td>
+                                <td class="column4"><form action="/admin/productlist" method="POST">
+                                    <input type="number" value="<%= data.mrp%>" id = wallet name = "mrp" style="background-color: rgb(183, 221, 255);"> <br>
+                                    <input type="number" value="<%= data.stock%>" id = wallet name = "stock" style="background-color:rgb(183, 221, 255);"> <br> 
+                                    <input type="number" value="<%= data.del_status%>" id = wallet name = "del_status" style="background-color: rgb(183, 221, 255);"> <br>
+                                    <input style="display: none;"  name="pid" type="number" value="<%=data.pid%>" >
+                                    <button type="submit" class="login100-form-btn" style="height: 30px; width: 150px;">Update</button>
+                                </form></td>
+                            </tr>
+                            <%  i++; }) %>
+                            <% } else{ %>
+                                <tr>
+                                    <td colspan="7">No Data Found</td>
+                                </tr>
+                            <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+
+        
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->

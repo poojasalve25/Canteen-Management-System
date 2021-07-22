@@ -1,0 +1,29 @@
+<div class="wrapper wrapper--w960">
+    <div class="card card-2">
+        <div class="card-heading"></div>
+        <div class="card-body" style="float: left;">
+            <h2 class="title">Registration Info</h2>
+            <form method="POST" action = "/user/register">
+                <div class="input-group">
+                    <input class="input--style-2" type="text" placeholder="Name" name="name">
+                </div>
+                        <div class="input-group">
+                            <input class="input--style-2 js-datepicker" type="email" placeholder="Birthdate" name="email">
+                            <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                        </div>
+
+                        <div class="input-group">
+                            <input class="input--style-2" type="number" placeholder="Phone Number" name="phone_num">
+                        </div>
+
+
+                        <div class="input-group">
+                            <input class="input--style-2" type="password" placeholder="Registration Code" name="password">
+                        </div>             
+                <div class="p-t-30">
+                    <button class="btn btn--radius btn--green" type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
